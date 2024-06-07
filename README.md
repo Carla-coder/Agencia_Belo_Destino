@@ -125,19 +125,19 @@ nodemon
 
 - Tela 1
 
-![tela 1](https://github.com/Carla-coder/Agencia_Belo_Destino/assets/128012862/cafaaa72-5f45-4e12-8296-49462b7f1004)
+![tela 1](https://github.com/Carla-coder/Agencia_Belo_Destino/assets/128012862/741a9153-d669-4832-85be-a3e2dbad851c)
 
 - Tela 2
 
-![tela 2](https://github.com/Carla-coder/Agencia_Belo_Destino/assets/128012862/121b985f-6864-4d5d-97fe-48ffbeaa60e3)
+![tela 2](https://github.com/Carla-coder/Agencia_Belo_Destino/assets/128012862/3974e2c7-496a-4b73-a2b9-659949dc881a)
 
 - Tela 3
 
-![destinos](https://github.com/Carla-coder/Agencia_Belo_Destino/assets/128012862/d6eb7d9b-ad23-45da-8ea9-4085902eeec6)
+![destinos](https://github.com/Carla-coder/Agencia_Belo_Destino/assets/128012862/7430e08a-a2ab-4618-997e-ecdff9d3eaab)
 
 - Tela 3 - Botão Adicionar Destino
 
-![pagina destinos](https://github.com/Carla-coder/Agencia_Belo_Destino/assets/128012862/5d079ea9-0cd2-4976-b0f0-22ae9b775a04)
+![pagina destinos](https://github.com/Carla-coder/Agencia_Belo_Destino/assets/128012862/c7600b6b-1bce-48af-b405-006561e630ae)
 
 - Modal Adicionar Destino
 
@@ -145,19 +145,19 @@ nodemon
 
 - Modal Editar Destino
 
-![modal editar destino](https://github.com/Carla-coder/Agencia_Belo_Destino/assets/128012862/d1f130d7-4817-402a-af03-4d11dcb8d3e6)
+![modal editar destino](https://github.com/Carla-coder/Agencia_Belo_Destino/assets/128012862/d51f7e03-3e72-4998-957d-2ef4bb96cfaa)
 
 - Tela 4
 
-![hoteis](https://github.com/Carla-coder/Agencia_Belo_Destino/assets/128012862/1d4ac067-3190-462c-8a09-2efa56a15b88)
+![hoteis](https://github.com/Carla-coder/Agencia_Belo_Destino/assets/128012862/1abb7d9a-a7d7-4cb2-b714-3acd53485b7f)
 
 - Tela 5
 
-![pontos](https://github.com/Carla-coder/Agencia_Belo_Destino/assets/128012862/4e9161e8-ecb7-478e-9c4c-dabd738f1278)
+![pontos](https://github.com/Carla-coder/Agencia_Belo_Destino/assets/128012862/628585eb-85e7-4b6b-84bf-86d4c2665b34)
 
 - Tela 6
 
-![tela 6](https://github.com/Carla-coder/Agencia_Belo_Destino/assets/128012862/e1e95722-0239-47c6-a44e-65faf84232bd)
+![tela 6](https://github.com/Carla-coder/Agencia_Belo_Destino/assets/128012862/87a3ea73-8660-47e2-807f-5d74ede4dd81)
 
 ## Autores
 
