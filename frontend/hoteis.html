@@ -21,37 +21,184 @@
             </ul>
         </nav>
     </header>
+    
     <section id="hoteis">
         <div class="titulo">
             <h2>Hotéis</h2>
+            <button id="addHotelBtn">Adicionar Hotel</button>
         </div>
         <div id="hoteis-container" class="container"></div>
     </section>
+
+    <!-- Modal para Adicionar Hotel -->
+    <div id="hotelModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Adicionar Hotel</h2>
+            <form id="hotelForm">
+                <input type="hidden" id="hotelId">
+                <div>
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div>
+                    <label for="avaliacao">Avaliação</label>
+                    <input type="number" id="avaliacao" name="avaliacao" required>
+                </div>
+                <div>
+                    <label for="valor">Valor</label>
+                    <input type="number" id="valor" name="valor" required>
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="site">Site</label>
+                    <input type="url" id="site" name="site" required>
+                </div>
+                <button type="submit" id="submitBtn">Adicionar</button>
+                <button type="button" id="editBtn">Editar</button>
+            </form>
+        </div>
+    </div>
+
     <footer>
         <p>&copy; 2024 Viagens Belo Destino. Todos os direitos reservados.</p>
     </footer>
+
     <script>
         document.addEventListener('DOMContentLoaded', async function () {
             const hoteisContainer = document.getElementById('hoteis-container');
+            const modal = document.getElementById("hotelModal");
+            const addHotelBtn = document.getElementById("addHotelBtn");
+            const closeBtn = document.getElementsByClassName("close")[0];
+            const hotelForm = document.getElementById("hotelForm");
+            const editBtn = document.getElementById("editBtn");
 
-            try {
-                const response = await fetch('http://localhost:3000/hoteis');
-                const data = await response.json();
-                data.forEach(hotel => {
-                    const card = document.createElement('div');
-                    card.classList.add('card');
-                    card.innerHTML = `
-                        <h3> ${hotel.nome}</h3>
-                        <p>Avaliação: ${hotel.avaliacao}</p>
-                        <p>Valor: R$ ${hotel.valor}</p>
-                        <p>Email: ${hotel.email}</p>
-                        <p>Site: ${hotel.site}</p>
-                    `;
-                    hoteisContainer.appendChild(card);
+            addHotelBtn.onclick = function () {
+                openModal();
+            };
+
+            closeBtn.onclick = function () {
+                closeModal();
+            };
+
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    closeModal();
+                }
+            };
+
+            hotelForm.onsubmit = async function (event) {
+                event.preventDefault();
+                const id = document.getElementById('hotelId').value;
+                const nome = document.getElementById('nome').value;
+                const avaliacao = document.getElementById('avaliacao').value;
+                const valor = document.getElementById('valor').value;
+                const email = document.getElementById('email').value;
+                const site = document.getElementById('site').value;
+
+                const hotel = { nome, avaliacao, valor, email, site };
+
+                if (id) {
+                    await updateHotel(id, hotel);
+                } else {
+                    await addHotel(hotel);
+                }
+
+                fetchHoteis();
+                closeModal();
+            };
+
+            editBtn.onclick = function () {
+                const id = document.getElementById('hotelId').value;
+                const nome = document.getElementById('nome').value;
+                const avaliacao = document.getElementById('avaliacao').value;
+                const valor = document.getElementById('valor').value;
+                const email = document.getElementById('email').value;
+                const site = document.getElementById('site').value;
+
+                const hotel = { id, nome, avaliacao, valor, email, site };
+
+                openModal(hotel);
+            };
+
+            const openModal = (hotel = null) => {
+                if (hotel) {
+                    document.getElementById('hotelId').value = hotel.id;
+                    document.getElementById('nome').value = hotel.nome;
+                    document.getElementById('avaliacao').value = hotel.avaliacao;
+                    document.getElementById('valor').value = hotel.valor;
+                    document.getElementById('email').value = hotel.email;
+                    document.getElementById('site').value = hotel.site;
+                    document.getElementById('modalTitle').innerText = 'Editar Hotel';
+                    document.getElementById('submitBtn').innerText = 'Atualizar';
+                } else {
+                    document.getElementById('hotelForm').reset();
+                    document.getElementById('modalTitle').innerText = 'Adicionar Hotel';
+                    document.getElementById('submitBtn').innerText = 'Adicionar';
+                }
+                modal.style.display = "block";
+            };
+
+            const closeModal = () => {
+                modal.style.display = "none";
+            };
+
+            const fetchHoteis = async () => {
+                try {
+                    const response = await fetch('http://localhost:3000/hoteis');
+                    const data = await response.json();
+                    hoteisContainer.innerHTML = '';
+                    data.forEach(hotel => {
+                        const card = document.createElement('div');
+                        card.classList.add('card');
+                        card.innerHTML = `
+                            <h3>${hotel.nome}</h3>
+                            <p>Avaliação: ${hotel.avaliacao}</p>
+                            <p>Valor: R$ ${hotel.valor}</p>
+                            <p>Email: ${hotel.email}</p>
+                            <p>Site: ${hotel.site}</p>
+                            <button onclick="deleteHotel(${hotel.id})">Excluir</button>
+                        `;
+                        const editButton = document.createElement('button');
+                        editButton.textContent = "Editar";
+                        editButton.onclick = function () {
+                            openModal(hotel);
+                        };
+                        card.appendChild(editButton);
+                        hoteisContainer.appendChild(card);
+                    });
+                } catch (error) {
+                    console.error('Erro ao buscar hotéis:', error);
+                }
+            };
+
+            const addHotel = async (hotel) => {
+                await fetch('http://localhost:3000/hoteis', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(hotel)
                 });
-            } catch (error) {
-                console.error('Erro ao buscar hotéis:', error);
-            }
+            };
+
+            const updateHotel = async (id, hotel) => {
+                await fetch(`http://localhost:3000/hoteis/${id}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(hotel)
+                });
+            };
+
+            window.deleteHotel = async (id) => {
+                await fetch(`http://localhost:3000/hoteis/${id}`, {
+                    method: 'DELETE'
+                });
+                fetchHoteis();
+            };
+
+            fetchHoteis();
         });
     </script>
 </body>
