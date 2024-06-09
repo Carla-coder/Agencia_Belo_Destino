@@ -133,11 +133,7 @@ nodemon
 
 - Tela 3
 
-![destinos](https://github.com/Carla-coder/Agencia_Belo_Destino/assets/128012862/7430e08a-a2ab-4618-997e-ecdff9d3eaab)
-
-- Tela 3 - Botão Adicionar Destino
-
-![pagina destinos](https://github.com/Carla-coder/Agencia_Belo_Destino/assets/128012862/c7600b6b-1bce-48af-b405-006561e630ae)
+![destinos1](https://github.com/Carla-coder/Agencia_Belo_Destino/assets/128012862/9dbf697f-e68e-4b6e-a8fe-9663dbce63d3)
 
 - Modal Adicionar Destino
 
@@ -149,11 +145,27 @@ nodemon
 
 - Tela 4
 
-![hoteis](https://github.com/Carla-coder/Agencia_Belo_Destino/assets/128012862/1abb7d9a-a7d7-4cb2-b714-3acd53485b7f)
+![hoteis1](https://github.com/Carla-coder/Agencia_Belo_Destino/assets/128012862/3c8b8e6d-4608-49f5-b509-f67ace8561fb)
+
+- Modal Adicionar Hotel
+
+![adicionar hotel](https://github.com/Carla-coder/Agencia_Belo_Destino/assets/128012862/71ccdacc-9770-4302-91e3-0cfbd8939afd)
+
+- Modal Editar Hotel
+
+![editar hotel](https://github.com/Carla-coder/Agencia_Belo_Destino/assets/128012862/1df0b740-b791-430d-8034-0a97a2ed4db1)
 
 - Tela 5
 
-![pontos](https://github.com/Carla-coder/Agencia_Belo_Destino/assets/128012862/628585eb-85e7-4b6b-84bf-86d4c2665b34)
+![pontos1](https://github.com/Carla-coder/Agencia_Belo_Destino/assets/128012862/b91c7e0f-96fd-48e6-b838-5acde8cb441a)
+
+- Modal Adicionar Ponto
+
+![adicionar ponto](https://github.com/Carla-coder/Agencia_Belo_Destino/assets/128012862/e4c1d45c-3691-4e9e-992d-1aa5018886df)
+
+- Modal Editar Ponto
+
+![editar ponto](https://github.com/Carla-coder/Agencia_Belo_Destino/assets/128012862/0fc00ff2-f60a-4304-b8b2-369ff027be19)
 
 - Tela 6
 
