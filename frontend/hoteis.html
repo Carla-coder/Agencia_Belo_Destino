@@ -21,7 +21,7 @@
             </ul>
         </nav>
     </header>
-    
+
     <section id="hoteis">
         <div class="titulo">
             <h2>Hotéis</h2>
@@ -58,7 +58,7 @@
                     <input type="url" id="site" name="site" required>
                 </div>
                 <button type="submit" id="submitBtn">Adicionar</button>
-                <button type="button" id="editBtn">Editar</button>
+                <!-- <button type="button" id="editBtn">Editar</button> -->
             </form>
         </div>
     </div>
@@ -93,11 +93,17 @@
             hotelForm.onsubmit = async function (event) {
                 event.preventDefault();
                 const id = document.getElementById('hotelId').value;
+                let site = document.getElementById('site').value;
+
+                // Adiciona "http://" se o site não começar com "http://" ou "https://"
+                if (!/^https?:\/\//i.test(site)) {
+                    site = "http://" + site;
+                }
+
                 const nome = document.getElementById('nome').value;
                 const avaliacao = document.getElementById('avaliacao').value;
                 const valor = document.getElementById('valor').value;
                 const email = document.getElementById('email').value;
-                const site = document.getElementById('site').value;
 
                 const hotel = { nome, avaliacao, valor, email, site };
 
@@ -109,19 +115,6 @@
 
                 fetchHoteis();
                 closeModal();
-            };
-
-            editBtn.onclick = function () {
-                const id = document.getElementById('hotelId').value;
-                const nome = document.getElementById('nome').value;
-                const avaliacao = document.getElementById('avaliacao').value;
-                const valor = document.getElementById('valor').value;
-                const email = document.getElementById('email').value;
-                const site = document.getElementById('site').value;
-
-                const hotel = { id, nome, avaliacao, valor, email, site };
-
-                openModal(hotel);
             };
 
             const openModal = (hotel = null) => {
@@ -159,7 +152,7 @@
                             <p>Avaliação: ${hotel.avaliacao}</p>
                             <p>Valor: R$ ${hotel.valor}</p>
                             <p>Email: ${hotel.email}</p>
-                            <p>Site: ${hotel.site}</p>
+                            <p>Site: <a href="${hotel.site}" target="_blank">${hotel.site}</a></p>
                             <button onclick="deleteHotel(${hotel.id})">Excluir</button>
                         `;
                         const editButton = document.createElement('button');

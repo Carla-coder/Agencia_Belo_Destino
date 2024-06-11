@@ -8,8 +8,6 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  margin: 0;
-  padding: 0;
   background-color: #121f34;
 }
 
@@ -41,8 +39,8 @@ nav ul li a {
 .container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 20px;
+  justify-content: space-between;
+  padding: 60px;
 }
 
 .titulo h2 {
@@ -72,14 +70,17 @@ nav ul li a {
 }
 
 /* Card styles */
-
 .card {
-  background: linear-gradient(to right, #76b9cf, #f5deb3);
-  border: 2px solid #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: calc(20% - 26px);
+  margin: 30px;
+  padding: 10px;
+  border: none;
   border-radius: 10px;
-  width: calc(15% - 26px);
-  margin: 90px;
-  padding: 6px;
+  background: linear-gradient(to right, #76b9cf, #f5deb3);
   box-sizing: border-box;
   text-align: center;
 }

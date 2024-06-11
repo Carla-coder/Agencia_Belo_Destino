@@ -1,4 +1,3 @@
-/* styles.css */
 * {
   margin: 0;
   padding: 0;
@@ -8,8 +7,6 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  margin: 0;
-  padding: 0;
   background-color: #121f34;
 }
 
@@ -41,7 +38,7 @@ nav ul li a {
 .container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 section {
@@ -64,37 +61,8 @@ footer p {
   font-size: 22px;
 }
 
-.destinos {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  color: #76b9cf;
-  display: flex;
-}
-
-.destinos img {
-  width: 500px;
-  margin-top: 100px;
-  margin-left: 200px;
-  animation: pulse 7s infinite alternate;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.2);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
 .titulo h2 {
   color: #ffffff;
-  background-clip: text;
   text-align: center;
   font-weight: bolder;
   font-size: 50px;
@@ -118,72 +86,19 @@ footer p {
   background: linear-gradient(to right, #f0a00c, #7e7e06);
 }
 
-.resumo {
-  text-align: center;
-  width: 900px;
-  margin-top: 150px;
-}
-
-.resumo h2 {
-  color: #ffffff;
-  background-clip: text;
-  text-align: center;
-  margin-top: 40px;
-  font-weight: bolder;
-  font-size: 50px;
-  text-shadow: 2px 2px 4px rgba(247, 213, 25, 0.952), 0 0 10px rgb(223, 127, 17);
-}
-
-.resumo p {
-  margin-top: 20px;
-  font-size: 18px;
-}
-
-/* Estilos específicos para destinos */
-#destinos .destino {
-  border: 1px solid #ddd;
-  margin: 10px;
-  padding: 10px;
-  width: 30%;
-}
-
-/* Estilos específicos para hotéis */
-#hoteis .hotel {
-  border: 1px solid #ddd;
-  margin: 10px;
-  padding: 10px;
-  width: 30%;
-}
-
-/* Estilos específicos para pontos turísticos */
-#pontos .ponto {
-  border: 1px solid #ddd;
-  margin: 10px;
-  padding: 10px;
-  width: 30%;
-}
-
 /* Estilos específicos para os cards */
 .card {
   display: flex;
-  /* Usado para aplicar o Flexbox */
   flex-direction: column;
-  /* Direção da coluna para alinhar verticalmente */
   align-items: center;
-  /* Alinha os itens horizontalmente ao centro */
   justify-content: center;
-  /* Alinha os itens verticalmente ao centro */
   width: calc(15% - 60px);
-  margin: 80px;
+  margin: 30px;
   padding: 10px;
-  border: 2px solid #000;
-  /* Borda sólida de 2px */
+  border: none;
   border-radius: 10px;
-
-  /* background-color: #f0f0f0; Cor de fundo do card */
   background: linear-gradient(to right, #76b9cf, #f5deb3);
   box-sizing: border-box;
-  /* Inclui a borda e o preenchimento na largura total do card */
 }
 
 .card h3 {
@@ -194,6 +109,7 @@ footer p {
 
 .card p {
   font-size: 14px;
+  text-align: center;
 }
 
 /* Estilos para o contêiner dos cards */
@@ -201,7 +117,6 @@ footer p {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  /* Distribui os cards uniformemente nas linhas */
 }
 
 /* Modal */

@@ -151,9 +151,6 @@ nodemon
 
 ![adicionar hotel](https://github.com/Carla-coder/Agencia_Belo_Destino/assets/128012862/71ccdacc-9770-4302-91e3-0cfbd8939afd)
 
-- Modal Editar Hotel
-
-![editar hotel](https://github.com/Carla-coder/Agencia_Belo_Destino/assets/128012862/1df0b740-b791-430d-8034-0a97a2ed4db1)
 
 - Tela 5
 
